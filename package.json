@@ -1,0 +1,47 @@
+{
+  "name": "openclaw-channel-telegram-userbot",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "src/*.ts",
+    "openclaw.plugin.json"
+  ],
+  "dependencies": {
+    "input": "^1.0.1",
+    "telegram": "^2.26.0",
+    "zod": "^4.3.6"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.2.13"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channels": [
+      "telegram-userbot"
+    ],
+    "installDependencies": true,
+    "channel": {
+      "id": "telegram-userbot",
+      "label": "Telegram Userbot",
+      "selectionLabel": "Telegram Userbot (MTProto)",
+      "docsPath": "/channels/telegram-userbot",
+      "order": 80,
+      "aliases": [
+        "tg-user",
+        "telegram-client"
+      ]
+    },
+    "install": {
+      "npmSpec": "openclaw-channel-telegram-userbot",
+      "localPath": ".",
+      "defaultChoice": "npm"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
